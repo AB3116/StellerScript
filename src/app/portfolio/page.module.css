@@ -1,0 +1,47 @@
+.mainTitle {
+    font-size: 5rem;
+}
+
+.selectTitle {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.items {
+    display: flex;
+    gap: 3rem;
+    margin: 1.5rem 0;
+}
+
+.item {
+    width: 300px;
+    height: 400px;
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    position: relative;
+    background-size: cover !important;
+}
+
+.item:hover {
+    color: #51c283;
+}
+
+.item:nth-child(1) {
+    background: url('/illustration.png');
+}
+
+.item:nth-child(2) {
+    background: url('/websites.jpg');
+}
+
+.item:nth-child(3) {
+    background: url('/apps.jpg');
+}
+
+.title {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
