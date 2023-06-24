@@ -1,0 +1,11 @@
+.container {
+  border: none;
+  background-color: #53c28b;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  max-width: max-content;
+}

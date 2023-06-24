@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.imgContainer {
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+
+.img {
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.imgTexts {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    background: #53c281;
+    color: white;
+    padding: 0.5rem;
+}
+
+.textContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+}
+
+.item {
+    flex: 1;
+    display: grid;
+    row-gap: 1.5rem;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.text {
+    font-size: 1rem;
+    text-align: justify;
+}

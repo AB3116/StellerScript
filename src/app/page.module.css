@@ -22,6 +22,11 @@
   font-size: 1.5rem;
 }
 
+.heroImg {
+  width: 100%;
+  height: fit-content;
+}
+
 .button {
   border: none;
   background-color: #53c28b;
@@ -32,9 +37,4 @@
   cursor: pointer;
   font-weight: bold;
   max-width: max-content;
-}
-
-.heroImg {
-  width: 100%;
-  height: fit-content;
 }
