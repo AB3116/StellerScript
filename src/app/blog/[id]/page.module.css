@@ -1,0 +1,52 @@
+.article {
+  display: grid;
+  row-gap: 3rem;
+  margin: 3rem 0;
+}
+
+.topContainer {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.heading {
+  font-size: 2rem;
+}
+
+.authorContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authorImg {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.authorName {
+  font-size: 1rem;
+}
+
+.imgContainer {
+  flex: 1;
+  height: 300px;
+  position: relative;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.blogContainer {
+    display: grid;
+    row-gap: 1rem;
+}
