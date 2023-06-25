@@ -1,14 +1,27 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { notFound } from "next/navigation";
 
-function BlogPost() {
+async function getData(id) {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts/" + id);
+
+  if (!res.ok) {
+    return notFound();
+  }
+
+  return res.json();
+}
+
+async function BlogPost({ params }) {
+  const data = await getData(params.id);
   return (
     <main className={styles.container}>
       <article className={styles.article}>
         <section className={styles.topContainer}>
           <div className={styles.text}>
             <h1 className={styles.heading}>
-              Lorem ipsum dolor sit, amet consectetur. Hic, aperiam!
+              {/* Lorem ipsum dolor sit, amet consectetur. Hic, aperiam! */}
+              {data.title}
             </h1>
             <p className={styles.subheading}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
