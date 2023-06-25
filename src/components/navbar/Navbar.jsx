@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./navbar.module.css";
+import DarkModeToggle from "../darkmode/DarkModeToggle";
 
 const links = [
   { id: 1, title: "Home", url: "/" },
@@ -18,6 +19,7 @@ function Navbar() {
         StellerScript
       </Link>
       <ul className={styles.links}>
+        <DarkModeToggle />
         {links.map((link) => (
           <li key={link.id}>
             <Link href={link.url} className={styles.link}>
