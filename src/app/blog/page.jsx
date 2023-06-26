@@ -3,7 +3,9 @@ import styles from "./page.module.css";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch("http://localhost:3000/api/posts", {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -18,7 +20,7 @@ async function Blog() {
   return (
     <main className={styles.container}>
       {data.map((item) => (
-        <Link href={`/blog/${item.id}`} key={item.id}>
+        <Link href={`/blog/${item._id}`} key={item._id}>
           <article className={styles.item}>
             <div className={styles.imgContainer}>
               <Image
