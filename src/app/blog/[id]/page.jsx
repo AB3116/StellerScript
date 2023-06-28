@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts/" + id);
+  const res = await fetch("http://localhost:3000/api/posts/" + id);
 
   if (!res.ok) {
     return notFound();
@@ -24,10 +24,7 @@ async function BlogPost({ params }) {
               {data.title}
             </h1>
             <p className={styles.subheading}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-              doloremque magnam numquam eius eum temporibus magni provident
-              reprehenderit distinctio. Exercitationem quisquam tempore impedit.
-              Repellendus, enim amet.
+              {data.desc}
             </p>
             <div className={styles.authorContainer}>
               <Image
@@ -37,13 +34,13 @@ async function BlogPost({ params }) {
                 height={40}
                 className={styles.authorImg}
               />
-              <h2 className={styles.authorName}>John Doe</h2>
+              <h2 className={styles.authorName}>{data.username}</h2>
             </div>
           </div>
           <div className={styles.imgContainer}>
             <Image
               className={styles.img}
-              src="https://images.pexels.com/photos/7957992/pexels-photo-7957992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              src={data.img}
               alt="Blog"
               fill={true}
             />
@@ -51,7 +48,7 @@ async function BlogPost({ params }) {
         </section>
         <section className={styles.blogContainer}>
           <p className={styles.blogText}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+            {data.content} lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
             perferendis eum? Quia laudantium, id quis ratione ex porro
             architecto obcaecati esse iste illum ipsa nesciunt ducimus cum quod
             exercitationem rem doloribus. Quas fugiat suscipit quia repellendus

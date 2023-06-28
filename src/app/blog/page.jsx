@@ -3,12 +3,10 @@ import styles from "./page.module.css";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/posts", {
-    cache: "no-store",
-  });
+  const res = await fetch("http://localhost:3000/api/posts");
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    throw new Error("Failed to fetch blogs");
   }
 
   return res.json();
@@ -24,7 +22,7 @@ async function Blog() {
           <article className={styles.item}>
             <div className={styles.imgContainer}>
               <Image
-                src="https://images.pexels.com/photos/7957992/pexels-photo-7957992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                src={item.img}
                 alt="Blog post"
                 className={styles.img}
                 width={300}
@@ -34,10 +32,7 @@ async function Blog() {
             <div className={styles.textContainer}>
               <h2 className={styles.title}>{item.title}</h2>
               <p className={styles.desc}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet
-                laborum aut id omnis tempora! Totam animi hic ipsum eius velit.
-                Nulla incidunt blanditiis quidem expedita. Veniam perferendis
-                fugit ipsam labore.
+                {item.desc}
               </p>
             </div>
           </article>
