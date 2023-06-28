@@ -3,6 +3,11 @@ import styles from "./page.module.css";
 import ContactImg from "/public/contact.png";
 import Button from "@/components/button/Button";
 
+export const metadata = {
+  title: "StellerScript | Contact",
+  description: "Contact information about StellerScript",
+};
+
 function Contact() {
   return (
     <main className={styles.container}>

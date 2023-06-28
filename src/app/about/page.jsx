@@ -3,6 +3,11 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Button from "@/components/button/Button";
 
+export const metadata = {
+  title: "StellerScript | About",
+  description: "About StellerScript",
+};
+
 function About() {
   return (
     <main className={styles.container}>
@@ -43,9 +48,15 @@ function About() {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam,
             atque. Ipsum dolor sit.
           </p>
-          <p className={styles.text}><strong>- Dynamic Websites</strong></p>
-          <p className={styles.text}><strong>- Fast and Handy</strong></p>
-          <p className={styles.text}><strong>- Mobile Apps</strong></p>
+          <p className={styles.text}>
+            <strong>- Dynamic Websites</strong>
+          </p>
+          <p className={styles.text}>
+            <strong>- Fast and Handy</strong>
+          </p>
+          <p className={styles.text}>
+            <strong>- Mobile Apps</strong>
+          </p>
           <Button url="/" text="Contact" />
         </article>
       </section>

@@ -12,6 +12,14 @@ async function getData(id) {
   return res.json();
 }
 
+export async function generateMetadata({ params }) {
+  const post = await getData(params.id);
+  return {
+    title: post.title,
+    description: post.description,
+  };
+}
+
 async function BlogPost({ params }) {
   const data = await getData(params.id);
   return (
@@ -23,9 +31,7 @@ async function BlogPost({ params }) {
               {/* Lorem ipsum dolor sit, amet consectetur. Hic, aperiam! */}
               {data.title}
             </h1>
-            <p className={styles.subheading}>
-              {data.desc}
-            </p>
+            <p className={styles.subheading}>{data.desc}</p>
             <div className={styles.authorContainer}>
               <Image
                 src="https://images.pexels.com/photos/7533347/pexels-photo-7533347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -48,12 +54,12 @@ async function BlogPost({ params }) {
         </section>
         <section className={styles.blogContainer}>
           <p className={styles.blogText}>
-            {data.content} lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
-            perferendis eum? Quia laudantium, id quis ratione ex porro
-            architecto obcaecati esse iste illum ipsa nesciunt ducimus cum quod
-            exercitationem rem doloribus. Quas fugiat suscipit quia repellendus
-            provident voluptatem, possimus, sapiente blanditiis amet soluta a
-            enim ab facere similique architecto harum.
+            {data.content} lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Illo, perferendis eum? Quia laudantium, id quis ratione ex
+            porro architecto obcaecati esse iste illum ipsa nesciunt ducimus cum
+            quod exercitationem rem doloribus. Quas fugiat suscipit quia
+            repellendus provident voluptatem, possimus, sapiente blanditiis amet
+            soluta a enim ab facere similique architecto harum.
           </p>
           <p className={styles.blogText}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
