@@ -45,3 +45,10 @@
 .existingAccount:hover {
     opacity: 0.8;
 }
+
+.errorMessage {
+  display: flex;
+  justify-content: center;
+  color: red;
+  font-weight: bold;
+}

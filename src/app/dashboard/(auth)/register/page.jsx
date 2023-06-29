@@ -9,12 +9,13 @@ function Register() {
   const router = useRouter();
 
   const handleSubmit = async (event) => {
+    event.preventDefault();
     const name = event.target[0].value;
     const email = event.target[1].value;
     const password = event.target[2].value;
 
     try {
-      const res = await fetch("api/auth/register", {
+      const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,7 +23,8 @@ function Register() {
         body: JSON.stringify({ name, email, password }),
       });
 
-      res.status === 201 && router.push("/dashboard/login?success=Account has been registered");
+      res.status === 201 &&
+        router.push("/dashboard/login?success=Account has been registered");
     } catch (error) {
       setError(true);
     }
@@ -37,16 +39,14 @@ function Register() {
           placeholder="Password"
           className={styles.input}
         />
-        <input
-          type="submit"
-          value="Register"
-          className={styles.registerButton}
-        />
+        <button type="submit" className={styles.registerButton}>
+          Register
+        </button>
       </form>
       <Link href="/dashboard/login" className={styles.existingAccount}>
         Login with an existing account
       </Link>
-      {error && <p className={styles.existingAccount}>Something went wrong</p>}
+      {error && <p className={styles.errorMessage}>Something went wrong!</p>}
     </div>
   );
 }
