@@ -1,14 +1,29 @@
 "use client";
-import { signIn } from "next-auth/react";
-import React from "react";
-import Link from "next/link";
+import { signIn, useSession } from "next-auth/react";
+import { useState } from "react";
 import styles from "./page.module.css";
+import { useRouter } from "next/navigation";
 
 function Login() {
+  const [error, setError] = useState(false);
+  const session = useSession();
+  const router = useRouter();
+
+  if (session.status === "loading") return <p>Loading...</p>
+  if (session.status === "authenticated") {
+    router?.push("/dashboard")
+  }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const email = event.target[0].value;
+    const password = event.target[1].value;
+
+    signIn("credentials", { email: email, password: password });
+  };
   return (
     <>
       <div className={styles.container}>
-        <form className={styles.formContainer}>
+        <form className={styles.formContainer} onSubmit={handleSubmit}>
           <input type="email" placeholder="Email" className={styles.input} />
           <input
             type="password"
@@ -18,7 +33,13 @@ function Login() {
           <button type="submit" className={styles.registerButton}>
             Login
           </button>
-          <button onClick={() => signIn("google")} className={styles.registerButton}>Login with Google</button>
+          <button
+            onClick={() => signIn("google")}
+            className={styles.registerButton}
+          >
+            Sign in with Google
+          </button>
+          {error && <p className={styles.errorMessage}>Something went wrong!</p>}
         </form>
       </div>
     </>
