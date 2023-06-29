@@ -1,0 +1,47 @@
+.container,
+.formContainer {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.input,
+.textarea {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid #53c28b;
+  border-radius: 0.5rem;
+  color: inherit;
+}
+
+.input:focus,
+.textarea:focus {
+  box-shadow: 0 0 10px #53c28b;
+}
+
+.registerButton {
+  border: none;
+  background-color: rgb(83, 194, 139);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.registerButton:hover {
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.existingAccount {
+    display: flex;
+    justify-content: center;
+}
+
+.existingAccount:hover {
+    opacity: 0.8;
+}
