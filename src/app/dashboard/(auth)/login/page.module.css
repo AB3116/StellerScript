@@ -47,6 +47,26 @@
   transition: all 0.2s ease;
 }
 
+.googleButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: transparent;
+  border: 2px solid #53c28b;
+  color: rgb(83, 194, 139);
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.googleButton:hover {
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
 .existingAccount {
   display: flex;
   justify-content: center;

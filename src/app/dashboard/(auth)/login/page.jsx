@@ -3,6 +3,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useState } from "react";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 function Login() {
   const [error, setError] = useState(false);
@@ -36,8 +37,9 @@ function Login() {
           </button>
           <button
             onClick={() => signIn("google")}
-            className={styles.registerButton}
+            className={styles.googleButton}
           >
+            <Image src="/GoogleLogo.svg" alt="Google Login" width={14} height={14} />
             Sign in with Google
           </button>
           {error && <p className={styles.errorMessage}>Something went wrong!</p>}
