@@ -1,58 +1,85 @@
 .container {
-    display: grid;
-    row-gap: 4rem;
+  display: grid;
+  row-gap: 4rem;
 }
 
 .title {
-    text-align: center;
-    font-size: 2.5rem;
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 .imageFormContainer {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }
 
 .imageContainer {
-    flex: 1;
-    position: relative;
-    height: 500px;
+  flex: 1;
+  position: relative;
+  height: 500px;
 }
 
 .img {
-    object-fit: contain;
-    animation: move 3s infinite ease-in-out alternate;
+  object-fit: contain;
+  animation: move 3s infinite ease-in-out alternate;
 }
 
 @keyframes move {
-    from {
-        transform: translateY(-10px);
-    } to {
-        transform: translateY(10px);
-    }
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
 }
 
 .formContainer {
-    flex: 1;
+  flex: 1;
 }
 
 .form {
-    display: grid;
-    row-gap: 2rem;
+  display: grid;
+  row-gap: 2rem;
 }
 
-.input, .textarea {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    font-family: inherit;
-    outline: none;
-    background-color: transparent;
-    border: 2px solid #53c28b;
-    border-radius: 0.5rem;
-    color: inherit;
+.input,
+.textarea {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid #53c28b;
+  border-radius: 0.5rem;
+  color: inherit;
 }
 
-.input:focus, .textarea:focus {
-    box-shadow: 0 0 10px #53c28b;
+.input:focus,
+.textarea:focus {
+  box-shadow: 0 0 10px #53c28b;
+}
+
+/* Loading Page */
+
+.loadingContainer {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  animation: sideToSide 0.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes sideToSide {
+  from {
+    background: linear-gradient(to left, #53c28b, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  to {
+    background: linear-gradient(to left, white, #53c28b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

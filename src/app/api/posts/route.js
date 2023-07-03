@@ -17,7 +17,7 @@ export const GET = async (request) => {
 
 export const POST = async (request) => {
   const body = request.json();
-  console.log(body);
+  console.log(JSON.stringify(body))
 
   const newPost = new Post(body);
 

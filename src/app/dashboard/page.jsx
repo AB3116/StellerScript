@@ -43,8 +43,8 @@ function Dashboard() {
       });
       mutate();
       event.target.reset();
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
     }
   };
 
@@ -54,12 +54,13 @@ function Dashboard() {
         method: "DELETE",
       });
       mutate();
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
     }
   };
 
   if (session.status === "authenticated") {
+
     return (
       <div className={styles.container}>
         <div className={styles.posts}>

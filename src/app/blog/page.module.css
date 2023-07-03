@@ -16,3 +16,28 @@
   display: grid;
   row-gap: 1.5rem;
 }
+
+/* Loading Page */
+
+.loadingContainer {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  animation: sideToSide 0.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1)
+    forwards;
+}
+
+@keyframes sideToSide {
+  from {
+    background: linear-gradient(to left, #53c28b, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  to {
+    background: linear-gradient(to left, white, #53c28b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
