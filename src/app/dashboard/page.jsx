@@ -20,7 +20,7 @@ function Dashboard() {
   }
 
   if (session.status === "unauthenticated") {
-    router?.push("/dashboard/login");
+    router?.push("/dashboard/register");
   }
 
   const handleSubmit = async (event) => {
@@ -66,20 +66,25 @@ function Dashboard() {
         <div className={styles.posts}>
           {isLoading
             ? "Loading..."
-            : data.map((post) => (
+            : 
+            <>
+            <h1 className={styles.yourPosts}>Your Posts</h1>
+            {data.map((post) => (
                 <div key={post._id} className={styles.post}>
                   <div className={styles.imgContainer}>
-                    <Image src={post.img} alt="" width={200} height={100} />
+                    <Image src={post.img} alt={post.title} fill={true} />
                   </div>
                   <h2 className={styles.postTitle}>{post.title}</h2>
                   <span
                     className={styles.delete}
-                    onClick={() => handleDelete(post.id)}
+                    onClick={() => handleDelete(post._id)}
                   >
                     Delete
                   </span>
                 </div>
               ))}
+            </>
+            }
         </div>
         <form className={styles.new} onSubmit={handleSubmit}>
           <h1>Add New Post</h1>

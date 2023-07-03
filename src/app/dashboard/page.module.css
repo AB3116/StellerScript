@@ -8,35 +8,35 @@
   flex: 1;
 }
 
+.yourPosts {
+  margin-bottom: 1.5rem;
+}
+
 .post {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 1rem 0;
+  padding-right: 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #53c28b;
+}
+
+.post:hover {
+  box-shadow: 0 0 10px #53c28b;
 }
 
 .imgContainer {
   width: 200px;
   height: 100px;
   position: relative;
-}
-
-.delete {
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border: 2px solid red;
   border-radius: 0.5rem;
-  color: red;
-}
-
-.delete:hover {
-  color: tomato;
-  border-color: tomato;
-  box-shadow: 0 0 10px tomato;
+  overflow: hidden;
 }
 
 .img {
-  object-fit: cover;
+  /* object-fit: contain; */
+  object-position: fixed;
 }
 
 .new {
@@ -76,6 +76,21 @@
   opacity: 0.85;
   transition: all 0.2s ease;
 }
+
+.delete {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 2px solid red;
+  border-radius: 0.5rem;
+  color: red;
+}
+
+.delete:hover {
+  color: tomato;
+  border-color: tomato;
+  box-shadow: 0 0 10px tomato;
+}
+
 
 /* Loading Page */
 
