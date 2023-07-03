@@ -60,16 +60,15 @@ function Dashboard() {
   };
 
   if (session.status === "authenticated") {
-
     return (
       <div className={styles.container}>
         <div className={styles.posts}>
-          {isLoading
-            ? "Loading..."
-            : 
+          {isLoading ? (
+            "Loading..."
+          ) : (
             <>
-            <h1 className={styles.yourPosts}>Your Posts</h1>
-            {data.map((post) => (
+              <h1 className={styles.yourPosts}>Your Posts</h1>
+              {data.map((post) => (
                 <div key={post._id} className={styles.post}>
                   <div className={styles.imgContainer}>
                     <Image src={post.img} alt={post.title} fill={true} />
@@ -84,7 +83,7 @@ function Dashboard() {
                 </div>
               ))}
             </>
-            }
+          )}
         </div>
         <form className={styles.new} onSubmit={handleSubmit}>
           <h1>Add New Post</h1>

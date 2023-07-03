@@ -17,14 +17,18 @@ export const GET = async (request) => {
 
 export const POST = async (request) => {
   const body = await request.json();
+  const imageUrl = body.img;
+  const imageUrlPattern = /https:\/\/images.pexels.com/i;
+
+  if (!imageUrl.match(imageUrlPattern)) {
+    return new NextResponse("Invalid Image URL Error", { status: 500 });
+  }
 
   const newPost = new Post(body);
 
   try {
     await connect();
-
     await newPost.save();
-
     return new NextResponse("Post has been created", { status: 201 });
   } catch (err) {
     return new NextResponse("Database Error", { status: 500 });

@@ -23,7 +23,7 @@ function Register() {
         body: JSON.stringify({ name, email, password }),
       });
 
-      res.status === 201 &&
+      res.status === 201 && 
         router.push("/dashboard/login?success=Account has been registered");
     } catch (error) {
       setError(true);
