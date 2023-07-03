@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  gap: 4rem;
 }
 
 .posts,
@@ -22,7 +23,16 @@
 
 .delete {
   cursor: pointer;
-  background-color: red;
+  padding: 0.5rem 1rem;
+  border: 2px solid red;
+  border-radius: 0.5rem;
+  color: red;
+}
+
+.delete:hover {
+  color: tomato;
+  border-color: tomato;
+  box-shadow: 0 0 10px tomato;
 }
 
 .img {

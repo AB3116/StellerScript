@@ -71,12 +71,12 @@ function Dashboard() {
                   <div className={styles.imgContainer}>
                     <Image src={post.img} alt="" width={200} height={100} />
                   </div>
-                  <h2 className={styles.postTitle}></h2>
+                  <h2 className={styles.postTitle}>{post.title}</h2>
                   <span
                     className={styles.delete}
                     onClick={() => handleDelete(post.id)}
                   >
-                    x
+                    Delete
                   </span>
                 </div>
               ))}
