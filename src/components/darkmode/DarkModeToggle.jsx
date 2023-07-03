@@ -11,10 +11,10 @@ function DarkModeToggle() {
   return (
     <div className={styles.container} onClick={toggleMode}>
       <div className={styles.icon}>
-        <Image src="/moon.png" alt="Moon" fill={true} />
+        <Image src="/moon.png" alt="Moon" height={16} width={16} />
       </div>
       <div className={styles.icon}>
-        <Image src="/sun.png" alt="Sun" fill={true} />
+        <Image src="/sun.png" alt="Sun" height={16} width={16} />
       </div>
       <div
         className={styles.ball}
